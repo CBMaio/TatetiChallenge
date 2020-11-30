@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  background-color: hsl(6, 54%, 95%);
+  height: 100vh;
+}
+
+.title-cotainer, .cell-table, p, .btn {
+  font-family: "Kanit", sans-serif;
+}
+
+.gamer-desc {
+  text-transform: uppercase;
+  font-size: 2rem!important;
+  font-weight: 300;
+}
+
+.win-letter {
+    color: #00c853;
+}
+
+.lose-letter {
+  color:  #E53935 ;
+}
+
+.titles { 
+    letter-spacing: .8px;
+    line-height: 48px;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: repeat(3, 0fr);
+  grid-gap: 5px;
+}
+
+.cell-table {
+  width: 100px;
+  height: 100px;
+  background-color: hsl(210, 9%, 70%);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 200;
+}
+
+.table-selected {
+  background-color: hsl(210, 9%, 85%);
+  border: 1px solid hsl(210, 9%, 100%);
+}
+
+section {
+  width: 80%;
+}
