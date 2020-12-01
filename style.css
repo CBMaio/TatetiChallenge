@@ -9,7 +9,7 @@ main,  .bg-color {
 }
 
 main {
-  height: 100vh;
+  height: 90vh;
 }
 
 .hidden {
@@ -63,4 +63,47 @@ main {
 
 section {
   width: 80%;
+}
+
+.footer {
+  background-color: hsl(6, 54%, 70%);
+  height: 10vh;
+}
+
+.text-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer p { 
+  color: white;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer a:hover {
+  color: rgb(255,255, 255,.7);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .text-container {
+    flex-direction: column;
+  }
+
+  .information-container {
+    flex-direction: column;
+  }
+
+  main {
+    height: 85vh;
+  }
+  
+  .footer {
+    height: 15vh;
+  }
 }
