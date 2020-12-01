@@ -17,7 +17,7 @@ const gameWin = () => {
   return win;
 };
 
-const selectCell = (cell) => {
+  const selectCell = (cell) => {
   if (cell.innerHTML === "" && !win) {
     if (game % 2 !== 0) {
       cell.innerHTML = "X";
@@ -91,6 +91,7 @@ const validation = () => {
 };
 
 const startGame = () => {
+  game = 0;
   document.getElementById("section-game").classList.remove("hidden");
   document.getElementById("section-names").classList.add("hidden");
   document.getElementById("description-game").innerHTML = `${
@@ -104,6 +105,8 @@ const newGamers = () => {
   document.getElementById("section-names").classList.remove("hidden");
   nameG1.value = '';
   nameG2.value = '';
+
+  resetGame();
 };
 
 const play = () => {
@@ -122,8 +125,8 @@ const play = () => {
 
 const resetGame = () => {
   win = false;
+  game = 0;
   result.classList.remove("win-letter");
   result.classList.remove("lose-letter");
-  game = 0;
   play();
 };

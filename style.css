@@ -12,11 +12,14 @@ main {
   height: 90vh;
 }
 
+.footer {
+  height: 10vh;
+}
 .hidden {
   display: none;
 }
 
-.title-cotainer, .cell-table, p, .btn {
+.title-cotainer, .cell-table, p, .btn, label {
   font-family: "Kanit", sans-serif;
 }
 
@@ -67,7 +70,6 @@ section {
 
 .footer {
   background-color: hsl(6, 54%, 70%);
-  height: 10vh;
 }
 
 .text-container {
@@ -90,7 +92,7 @@ section {
   text-decoration: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .text-container {
     flex-direction: column;
   }
@@ -100,10 +102,11 @@ section {
   }
 
   main {
-    height: 85vh;
+    height: auto;
   }
   
   .footer {
-    height: 15vh;
+    height: auto;
   }
+
 }
