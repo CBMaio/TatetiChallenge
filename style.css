@@ -4,9 +4,16 @@
   box-sizing: border-box;
 }
 
-main {
+main,  .bg-color {
   background-color: hsl(6, 54%, 95%);
+}
+
+main {
   height: 100vh;
+}
+
+.hidden {
+  display: none;
 }
 
 .title-cotainer, .cell-table, p, .btn {
@@ -14,8 +21,7 @@ main {
 }
 
 .gamer-desc {
-  text-transform: uppercase;
-  font-size: 2rem!important;
+  font-size: 23px!important;
   font-weight: 300;
 }
 
@@ -29,7 +35,6 @@ main {
 
 .titles { 
     letter-spacing: .8px;
-    line-height: 48px;
 }
 
 .table {
@@ -48,6 +53,7 @@ main {
   justify-content: center;
   font-size: 4rem;
   font-weight: 200;
+  box-shadow: 0px 0px 3px 0px rgb(0,0,0,.5);
 }
 
 .table-selected {

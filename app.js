@@ -1,19 +1,18 @@
 const cells = document.querySelectorAll(".cell-table");
 let game = 0;
 let win = false;
-let gamer1 = "X";
-let gamer2 = "0";
+let nameG1 = document.getElementById("gamer-1");
+let nameG2 = document.getElementById("gamer-2");
 let result = document.getElementById("result");
 
 const gameWin = () => {
-  if (game % 2 !== 0) {
-    result.innerHTML = `Ganó ${gamer1}`;
-    result.classList.add("win-letter");
-  } else {
-    result.innerHTML = `Ganó ${gamer2}`;
-    result.classList.add("win-letter");
+  result.classList.add("win-letter");
+  result.innerHTML = `Ganó ${
+    game % 2 !== 0 ? nameG1.value || "Jugador 1" : nameG2.value || "Jugador 2"
+  }`;
+  for (cell of cells) {
+    cell.classList.add("table-selected");
   }
-
   win = true;
   return win;
 };
@@ -23,11 +22,11 @@ const selectCell = (cell) => {
     if (game % 2 !== 0) {
       cell.innerHTML = "X";
       cell.value = "X";
-      result.innerHTML = `Turno de ${gamer2}`;
+      result.innerHTML = `Turno de ${nameG2.value || "Jugador 2"}`;
     } else {
       cell.innerHTML = "O";
       cell.value = "O";
-      result.innerHTML = `Turno de ${gamer1}`;
+      result.innerHTML = `Turno de ${nameG1.value || "Jugador 1"}`;
     }
 
     cell.classList.add("table-selected");
@@ -38,11 +37,12 @@ const selectCell = (cell) => {
 };
 
 const empate = () => {
-  if (game === 9) {
-   setTimeout(() => {
-    result.innerHTML = `¡Empate! Vuelve a intentarlo`;
-    result.classList.add('lose-letter');
-   }, 200)
+  if (game === 9 && !win) {
+    result.innerHTML = "Estamos evaluando su partida... 🤓";
+    setTimeout(() => {
+      result.innerHTML = `¡Empate! 😜 Vuelve a intentarlo `;
+      result.classList.add("lose-letter");
+    }, 1000);
   }
 };
 
@@ -90,9 +90,25 @@ const validation = () => {
   }
 };
 
+const startGame = () => {
+  document.getElementById("section-game").classList.remove("hidden");
+  document.getElementById("section-names").classList.add("hidden");
+  document.getElementById("description-game").innerHTML = `${
+    nameG1.value || "Jugador 1"
+  } Jugarás con la X. \n ${nameG2.value || "Jugador 2"} serás la O!`;
+  play();
+};
+
+const newGamers = () => {
+  document.getElementById("section-game").classList.add("hidden");
+  document.getElementById("section-names").classList.remove("hidden");
+  nameG1.value = '';
+  nameG2.value = '';
+};
+
 const play = () => {
   game++;
-  result.innerHTML = `Turno de ${gamer1}`;
+  result.innerHTML = `Arranca ${nameG1.value || "Jugador 1"}`;
   for (const cell of cells) {
     cell.classList.remove("table-selected");
     cell.innerHTML = "";
@@ -105,12 +121,9 @@ const play = () => {
 };
 
 const resetGame = () => {
-  document.getElementById("result").innerHTML = "";
   win = false;
   result.classList.remove("win-letter");
-  result.classList.remove('lose-letter');
+  result.classList.remove("lose-letter");
   game = 0;
   play();
 };
-
-play();

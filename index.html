@@ -20,41 +20,85 @@
   <body>
     <main>
       <section class="row justify-content-center m-auto p-2">
-        <div class="container col-12 col-sm-6 text-center mt-4 title-cotainer">
+        <div class="container col-12 col-md-6 text-center mt-4 title-cotainer">
           <h1 class="titles main-title">TA TE TI - Suerte para Tí</h1>
           <h2 class="titles subtitle">Vamos a jugar!</h2>
         </div>
       </section>
-      <section class="m-auto p-2">
-        <p id="result" class="gamer-desc text-center"></p>
-      </section>
-      <section class="row container justify-content-center m-auto p-2">
-        <div
-          class="container col-12 col-sm-6 text-center table justify-content-center"
-        >
-          <div class="cell-table" id="1"></div>
-          <div class="cell-table" id="2"></div>
-          <div class="cell-table" id="3"></div>
-          <div class="cell-table" id="4"></div>
-          <div class="cell-table" id="5"></div>
-          <div class="cell-table" id="6"></div>
-          <div class="cell-table" id="7"></div>
-          <div class="cell-table" id="8"></div>
-          <div class="cell-table" id="9"></div>
-        </div>
-      </section>
-      <section class="row justify-content-center m-auto p2">
-        <div
-          class="container col-12 col-sm-6 d-flex text-center table justify-content-center"
-        >
-          <button
-            id="reset-btn"
-            class="btn btn-secondary pl-4 pr-4"
-            onclick="resetGame()"
+      <section class="container-fluid m-auto" id="section-names">
+        <section class="m-auto p-2">
+          <p class="gamer-desc text-center text-capitalize">
+            Hola! Jugamos? 🤗
+          </p>
+        </section>
+        <section class="row container justify-content-center m-auto p-2">
+          <div class="col-md-4 col-12">
+            <div class="form-group mb-5">
+              <label for="name-gamer-1">Ingrese el nombre del Jugador 1</label>
+              <input type="text" class="form-control" id="gamer-1" />
+            </div>
+            <div class="form-group mb-5">
+              <label for="name-gamer-2">Ingrese el nombre del Jugador 2</label>
+              <input type="text" class="form-control" id="gamer-2" />
+            </div>
+          </div>
+        </section>
+        <section class="row justify-content-center m-auto p2">
+          <div
+            class="container col-12 col-sm-6 d-flex text-center table justify-content-center"
           >
-            Volver a jugar
-          </button>
-        </div>
+            <button
+              id="reset-btn"
+              class="btn btn-secondary pl-4 pr-4"
+              onclick="startGame()"
+            >
+              Empecemos
+            </button>
+          </div>
+        </section>
+      </section>
+
+      <section class="hidden container-fluid m-auto bg-color" id="section-game">
+        <section class="m-auto p-2">
+          <p
+            id="description-game"
+            class="gamer-desc text-capitalize text-center"
+          ></p>
+          <p id="result" class="gamer-desc text-center"></p>
+        </section>
+        <section class="row container justify-content-center m-auto p-2">
+          <div class="col-12 col-sm-6 table justify-content-center">
+            <div class="cell-table" id="1"></div>
+            <div class="cell-table" id="2"></div>
+            <div class="cell-table" id="3"></div>
+            <div class="cell-table" id="4"></div>
+            <div class="cell-table" id="5"></div>
+            <div class="cell-table" id="6"></div>
+            <div class="cell-table" id="7"></div>
+            <div class="cell-table" id="8"></div>
+            <div class="cell-table" id="9"></div>
+          </div>
+        </section>
+        <section class="row justify-content-center m-auto p2">
+          <div
+            class="container col-12 col-md-6 d-flex text-center table justify-content-center"
+          >
+            <button
+              id="reset-btn"
+              class="btn btn-secondary pl-4 pr-4"
+              onclick="resetGame()"
+            >
+              Volver a jugar
+            </button>
+            <button
+              id="reset-btn"
+              class="btn btn-secondary pl-4 pr-4"
+              onclick="newGamers()"
+            >
+              Elegir nuevos jugadores
+            </button>
+          </div>
+        </section>
       </section>
     </main>
     <script src="./app.js"></script>
