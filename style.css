@@ -108,3 +108,9 @@ section {
 
 }
 
+@media (max-width: 768px) {
+  .btn-container {
+    flex-direction: column;
+  }
+}
+
