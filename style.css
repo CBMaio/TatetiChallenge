@@ -9,12 +9,13 @@ main,  .bg-color {
 }
 
 main {
-  height: 90vh;
+  min-height: 90vh;
 }
 
-.footer {
-  height: 10vh;
+footer {
+  min-height: 10vh;
 }
+
 .hidden {
   display: none;
 }
@@ -96,7 +97,7 @@ section {
   text-decoration: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px){
   .text-container {
     flex-direction: column;
   }
@@ -105,12 +106,5 @@ section {
     flex-direction: column;
   }
 
-  main {
-    height: auto;
-  }
-  
-  .footer {
-    height: auto;
-  }
-
 }
+
